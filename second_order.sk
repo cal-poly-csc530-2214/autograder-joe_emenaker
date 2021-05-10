@@ -1,0 +1,33 @@
+
+int add(int a, int b) { return a + b; }
+int sub(int a, int b) { return a - b; }
+int mul(int a, int b) { return a * b; }
+int div(int a, int b) { return a / b; }
+
+int example(int a, int b) {
+	/* How about (a + b) * (a - c) */
+	int c = a + b;
+	int d = a - b;
+	int e = c * d;
+	return e;
+}
+
+int whats_the_func(int a, int b) implements example {
+	int parm1;
+	int parm2;
+	int result;
+	/* The repeat construct treats all holes as distinct for each repetition */
+	repeat(3) {
+		int choice = ??(2);
+		/* select the parms, first, so that Sketch doesn't do it for each case */
+		parm1 = $(int);
+		parm2 = $(int);
+		if (choice == 0) { result = add(parm1,parm2); }
+		if (choice == 1) { result = sub(parm1,parm2); }
+		if (choice == 2) { result = mul(parm1,parm2); }
+		if (choice == 3) { result = div(parm1,parm2); }
+		/* Let Sketch decide what to assign it to (maybe reuse a or b?) */
+		$(int) = result;
+	}
+	return $(int);
+}

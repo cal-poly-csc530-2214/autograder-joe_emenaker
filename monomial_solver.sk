@@ -1,0 +1,26 @@
+
+/**
+ ** Can we solve a MONOmial? Where y = a1*x + a0?
+**/
+
+/* MUST run sketch with --bnd-inbits=1 or we'll get an array out-of-bounds error */
+/* Analytic solution is: y = 1*x + 3 */
+int[3] inputs = { -3, -2, -2 };
+int[3] outputs = { 0, 1, 1 };
+
+int reference(int idx){ 
+	/* We don't need to get the x values, just return
+	the y value for this index */
+	return outputs[idx];
+}
+
+int polynomial(int idx) implements reference {
+	/* Set coefficients to have the range [-4,3] */
+	int a1 = ??(3) - 4;
+	int a0 = ??(3) - 4;
+	a1 = 1;
+	a0 = 3;
+	int input = inputs[idx];
+	int result = a1 * input + a0;
+	return result;
+}

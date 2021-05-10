@@ -1,0 +1,13 @@
+
+/**
+ ** Can we solve a constant? A "NOnomial"?
+**/
+
+int reference(int idx){
+	return 2;
+}
+
+int polynomial(int idx) implements reference {
+	int a0 = ??(2);
+	return a0;
+}
